@@ -28,14 +28,14 @@ open class DefaultDropView: UIView, EasyViewManual {
     open func showManualPulling(_ progress:CGFloat) {
         arrowImage.isHidden = false
         indicatorView.isHidden = true
-        titleLabel.text = "Pull to refresh..."
+        titleLabel.text = "下拉更新..."
         UIView.animate(withDuration: 0.4, animations: { () -> Void in
             self.arrowImage.transform = CGAffineTransform(rotationAngle: 0);
         }) 
     }
     
     open func showManualPullingOver() {
-        titleLabel.text = "Release to refresh..."
+        titleLabel.text = "放开更新..."
         UIView.animate(withDuration: 0.4, animations: { () -> Void in
             self.arrowImage.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI));
         }) 
@@ -126,17 +126,17 @@ open class DefaultUpView: UIView, EasyViewManual, EasyViewAutomatic {
     // MARK: - EasyViewAutomatic
     open func showAutomaticPulling(_ progress: CGFloat) {
         indicatorView.isHidden = true
-        titleLabel.text = "Pull to load more"
+        titleLabel.text = "上拉更新"
     }
     
     open func showAutomaticExcuting() {
         indicatorView.isHidden = false
-        titleLabel.text = "Loading..."
+        titleLabel.text = "正在更新..."
     }
     
     open func showAutomaticUnable() {
         indicatorView.isHidden = true
-        titleLabel.text = "Nothing more..."
+        titleLabel.text = "已经到底了..."
     }
     
     open func resetAutomatic() {
